@@ -1,0 +1,32 @@
+﻿
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace bo.JobPortal
+{
+    public class JobSystem
+    {
+        public List<String> Save(Job job)
+        {
+            List<string> result = new List<string>();
+            if (string.IsNullOrWhiteSpace(job.JobTitle))
+                result.Add("Job Title is a mandatory field");
+            if (string.IsNullOrWhiteSpace(job.SkillSet))
+                result.Add( "Skill Set is a mandatory field");
+            if (string.IsNullOrWhiteSpace(job.Education))
+                result.Add( "Education is a mandatory field");
+            if (!result.Any())
+            {
+
+                result.Add("Job Saved");
+            }
+            return result;
+        }
+
+        public List<Job> SearchJobs(Job criteria)
+        {
+            throw new MemberAccessException();
+        }
+    }
+}
